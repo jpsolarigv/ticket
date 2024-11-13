@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Login</title>
     <!-- CSS files -->
-    <link href="../../../plantillas/tabler/css/tabler.min.css" rel="stylesheet"/>
+    <link href="../../../materv/plantillas/tabler/css/tabler.min.css" rel="stylesheet"/>
 </head>
   
 <body  class=" d-flex flex-column">
@@ -35,12 +35,14 @@
               </div>
               
               <div class="mb-2">
+                
                 <label class="form-label">
                   Password
                   <span class="form-label-description">
                     <a href="./forgot-password.html">I forgot password</a>
                   </span>
                 </label>
+                
                 <div class="input-group input-group-flat">
                   <input type="password" class="form-control"  placeholder="Your password"  autocomplete="off">
                   <span class="input-group-text">
@@ -49,17 +51,22 @@
                     </a>
                   </span>
                 </div>
+
               </div>
+              
               <div class="mb-2">
                 <label class="form-check">
                   <input type="checkbox" class="form-check-input"/>
                   <span class="form-check-label">Remember me on this device</span>
                 </label>
               </div>
+              
               <div class="form-footer">
                 <button type="submit" class="btn btn-primary w-100">Sign in</button>
               </div>
+            
             </form>
+            
           </div>
           <div class="hr-text">or</div>
           <div class="card-body">
