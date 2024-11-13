@@ -4,13 +4,31 @@ class Titulo {
     
     // Array de títulos
     private $titulos = [];
-
+  
     // Constructor para inicializar los títulos
     public function __construct() 
     {
     
         // Títulos predeterminados
         $this->titulos = [
+            
+            //### TITULOS ###//
+            't_login' => 'Identificación',
+            't_login2' => 'Inicie sesión en su cuenta',
+
+            //### LABEL ###//
+            'l_email' => 'Correo Electrónico',
+            'l_password' => 'Contraseña',
+            
+            //### INPUT ###//
+            'i_email' => 'tu@correo electrónico.com',
+            'i_password' => 'Tu contraseña',
+
+            //### BOTONES ###//
+            'b_login' => 'Iniciar sesión',
+            
+
+
             'home' => 'Página Principal',
             'login' => 'Identificación',
             'contact' => 'Contáctanos',
@@ -21,6 +39,7 @@ class Titulo {
         ];
 
     }
+
 
     // Método para obtener el título de una página
     public function getTitle($codigo_titulo) 
