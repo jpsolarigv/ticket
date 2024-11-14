@@ -58,5 +58,10 @@ class Titulo {
         }
     }
 
+    public static function getBaseUrl() {
+        return 'https://matervirtual.edu.pe/materv/';
+    }
+
+    
     
 }

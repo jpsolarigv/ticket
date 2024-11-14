@@ -1,5 +1,7 @@
 <?php
 
+namespace materv\modulo\login\conf;
+
 class ConectarDB
 {
   private $ser = "localhost";
@@ -39,6 +41,13 @@ class ConectarDB
   public static function ruta(){
     return "https://matervirtual.edu.pe/materv/";
 	}
+
+  public static function getBaseUrl() {
+    return 'https://matervirtual.edu.pe/materv/';
+}
+
+ 
+
 
   public function cerrarConexion() {
     $this->pdo->close();

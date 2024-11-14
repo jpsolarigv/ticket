@@ -14,8 +14,8 @@
         if(empty($correo) and empty($pass))
         {
           $m2 = base64_encode(2);
-          header("Location:".parent::ruta()."index.php?m=$m2");
-			    exit();
+          //header("Location:".parent::ruta()."index.php?m=$m2");
+          header("Location:".Titulo::getBaseUrl()."index.php?m=$m2");
         }
         else
         {
@@ -33,7 +33,9 @@
             $_SESSION["usu_ide"]=$resultado["usu_ide"];
             $_SESSION["usu_nom"]=$resultado["usu_nom"];
             $_SESSION["usu_ape"]=$resultado["usu_ape"];
-            header("Location:".parent::ruta()."modulo/panel");
+
+            
+            header("Location:".Titulo::getBaseUrl()."modulo/panel");
             exit(); 
           }   
           else

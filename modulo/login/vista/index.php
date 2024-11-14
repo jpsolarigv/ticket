@@ -30,7 +30,7 @@
           <img src="modulo/login/vista/img/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
         </a>
       </div>
-      
+     <?php echo Titulo::getBaseUrl(); ?>
       <div class="card card-md">
         <div class="card-body">
           
