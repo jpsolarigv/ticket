@@ -17,7 +17,8 @@
   // Obtener los input
   $i_email = $titulos->getTitle('i_email');
   $i_password = $titulos->getTitle('i_password'); 
+  $i_enviar = base64_encode($titulos->getTitle('i_enviar')); 
 
-   // Obtener los botones
-   $b_login = $titulos->getTitle('b_login');
+  // Obtener los botones
+  $b_login = $titulos->getTitle('b_login');
    

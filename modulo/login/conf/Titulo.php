@@ -23,10 +23,13 @@ class Titulo {
             //### INPUT ###//
             'i_email' => 'tu@correo electrónico.com',
             'i_password' => 'Tu contraseña',
+            'i_enviar' => 'si',
 
             //### BOTONES ###//
             'b_login' => 'Iniciar sesión',
             
+
+
 
 
             'home' => 'Página Principal',
