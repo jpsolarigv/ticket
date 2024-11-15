@@ -1,7 +1,45 @@
 <?php
-   
-  class Login_m extends ConectarDB
+  
+  class Permisos_m extends ConectarDB
   {    
+    
+    public function listar_familia()
+    {
+      
+      $sql="SELECT t_familia_pulsera.fam_ide, t_familia_pulsera.pul_ide,t_familia.fam_nom,t_pulsera.pul_num 
+      FROM t_familia_pulsera
+      INNER join t_familia on t_familia.fam_ide = t_familia_pulsera.fam_ide
+      INNER join t_pulsera on t_pulsera.pul_ide = t_familia_pulsera.pul_ide
+      ";
+      $sql=$conectar->prepare($sql);
+      $sql->execute();
+      return $resultado=$sql->fetchAll();
+    }
+    
+    public function listar_sistema_roles($estsis,$iderol)
+	  {
+      $conectar= parent::conexion();
+      parent::set_names();
+      
+      $sql="SELECT t_familia_pulsera.fam_ide, t_familia_pulsera.pul_ide,t_familia.fam_nom,t_pulsera.pul_num 
+      FROM t_familia_pulsera   
+    
+    $consulta = $this->cx_db->table($this->tabla." as sis");
+		$consulta->select('sis.nomsis,sis.dessis,sis.urlsis,col.descol,ico.desico');
+		$consulta->join('colores as col', 'col.idecol = sis.idecol');
+		$consulta->join('iconos as ico', 'ico.ideico = sis.ideico');
+		$consulta->join('permisos_sistemas as persis', 'persis.idesis = sis.idesis');
+		$consulta->join('roles as rol', 'rol.iderol = persis.iderol');
+		$consulta->orderBy('ordsis', 'ASC');
+		
+		$resultado = $consulta->where(array(
+			"persis.estsis" => $estsis,
+			"rol.iderol" => $iderol,	
+		));
+		
+		return $resultado->get()->getResult();
+	}
+    
     public function login()  
     {
       $conectar=parent::getConnection();

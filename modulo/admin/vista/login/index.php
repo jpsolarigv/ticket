@@ -1,25 +1,26 @@
 <?php
-  require_once("modulo/login/controlador/titulo_c.php"); 
-  require_once("modulo/login/controlador/login_c.php"); 
+  require_once("modulo/admin/controlador/titulo_c.php"); 
+  //require_once("modulo/admin/controlador/login_c.php"); 
 ?>  
   
-
-
 <!doctype html>
 <html lang="en">
   
-<head>
+<head>  
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title><?php echo $t_login;?></title>
     <!-- CSS files -->
-    <link href="../../../materv/plantillas/tabler/css/tabler.min.css" rel="stylesheet"/>
+    <link href="<?php echo Titulo::getBaseUrl();?>plantillas/tabler/css/tabler.min.css" rel="stylesheet"/>
 </head>
   
-<body  class=" d-flex flex-column">
+<?Php echo get_include_path(); 
 
-  <script src="./dist/js/demo-theme.min.js?1692870487"></script>
+echo $path . PHP_EOL;
+?>
+
+<body  class=" d-flex flex-column">
 
   <div class="page page-center">
     
@@ -27,7 +28,7 @@
       
       <div class="text-center mb-4">
         <a href="." class="navbar-brand navbar-brand-autodark">
-          <img src="modulo/login/vista/img/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+          <img src="<?php echo Titulo::getBaseUrl();?>modulo/admin/vista/login/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
         </a>
       </div>
      <?php echo Titulo::getBaseUrl(); ?>
@@ -38,11 +39,14 @@
 
           <?php require_once("mensajes.php"); ?>
           
-            <form action="" method="post" autocomplete="off" novalidate>
+          
+            <form id="login" action="" method="post" autocomplete="off" novalidate>
               
+            
+
               <div class="mb-3">
                 <label class="form-label"><?php echo $l_email;?></label>
-                <input type="email" name="corusu" class="form-control" placeholder="<?php echo $i_email;?>" autocomplete="off">
+                <input type="email" name="corusu" id="corusu"  class="form-control" placeholder="<?php echo $i_email;?>" autocomplete="off">
               </div>
               
               <div class="mb-2">
@@ -71,6 +75,8 @@
                   <span class="form-check-label">Remember me on this device</span>
                 </label>
               </div>
+
+              
               
               <div class="form-footer">
                 <input type="hidden" name="enviar" class="form-control" value="<?php echo $i_enviar;?>" >
@@ -103,7 +109,7 @@
     </div>
     <!-- Libs JS -->
     <!-- Tabler Core -->
-    <script src="./dist/js/tabler.min.js?1692870487" defer></script>
-    <script src="./dist/js/demo.min.js?1692870487" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo Titulo::getBaseUrl();?>/modulo/admin/vista/login/login.js"></script>
   </body>
 </html>

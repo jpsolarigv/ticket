@@ -1,8 +1,9 @@
 <?php
   
-  require_once("modulo/login/conf/Titulo.php");
+  
+  require_once("modulo/admin/conf/Titulo.php");
 
-   
+     
   // Crear una instancia de la clase TitleManager
   $titulos = new Titulo();
  

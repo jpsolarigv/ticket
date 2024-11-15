@@ -1,13 +1,11 @@
 <?php
 
-namespace materv\modulo\login\conf;
-
 class ConectarDB
 {
   private $ser = "localhost";
-  private $dbn = "jpsolarig_kermes";
-  private $use = "jpsolarig_kermes";
-  private $pas = "Kermes2024**..";
+  private $dbn = "jpsolarig_administrador";
+  private $use = "jpsolarig_administrador";
+  private $pas = "Admin2024**..";
   private $pdo;
 
   // Constructor para inicializar la conexión al instanciar la clase
@@ -22,8 +20,7 @@ class ConectarDB
     try{
       $this->pdo = new PDO($dsn, $this->use, $this->pas);
       $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      echo "Conexión exitosa!";
-	  } catch (PDOException $e) {
+    } catch (PDOException $e) {
       echo "Error en la conexión: " . $e->getMessage();
 	    die();
 	  }
@@ -45,8 +42,6 @@ class ConectarDB
   public static function getBaseUrl() {
     return 'https://matervirtual.edu.pe/materv/';
 }
-
- 
 
 
   public function cerrarConexion() {

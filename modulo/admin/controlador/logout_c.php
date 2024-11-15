@@ -1,9 +1,10 @@
 <?php
 
-session_unset();
+session_start();
+session_unset();  // Elimina todas las variables de sesión
+session_destroy();  // Destruye la sesión completamente
 
-// Destruir la sesión
-session_destroy();
+
 
 //require_once("modulo/login/conf/ConectarDB.php");
   
