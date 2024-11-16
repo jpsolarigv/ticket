@@ -1,4 +1,7 @@
 <?php
-  require_once("modulo/admin/vista/login/index.php"); 
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
+  
+  header("Location: modulo/admin/vista/login");
 ?>
 

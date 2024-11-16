@@ -1,7 +1,4 @@
-<?php
-  require_once("modulo/admin/controlador/titulo_c.php"); 
-  //require_once("modulo/admin/controlador/login_c.php"); 
-?>  
+<?php require_once("../../controlador/titulo_c.php"); ?>  
   
 <!doctype html>
 <html lang="en">
@@ -12,93 +9,82 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title><?php echo $t_login;?></title>
     <!-- CSS files -->
-    <link href="<?php echo Titulo::getBaseUrl();?>plantillas/tabler/css/tabler.min.css" rel="stylesheet"/>
+    <link href="../../../../plantillas/tabler/css/tabler.min.css" rel="stylesheet"/>
 </head>
   
-<?Php echo get_include_path(); 
-
-echo $path . PHP_EOL;
-?>
-
 <body  class=" d-flex flex-column">
-
   <div class="page page-center">
-    
     <div class="container container-tight py-4">
       
       <div class="text-center mb-4">
         <a href="." class="navbar-brand navbar-brand-autodark">
-          <img src="<?php echo Titulo::getBaseUrl();?>modulo/admin/vista/login/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+          <img src="../brands/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
         </a>
       </div>
-     <?php echo Titulo::getBaseUrl(); ?>
+     
       <div class="card card-md">
         <div class="card-body">
-          
           <h2 class="h2 text-center mb-4"><?php echo $t_login2;?></h2>
 
-          <?php require_once("mensajes.php"); ?>
+          <div id="resultado"> </div>
           
+          <form id="login" action="" method="post" autocomplete="off" novalidate>
           
-            <form id="login" action="" method="post" autocomplete="off" novalidate>
+            <div class="mb-3">
+              <label class="form-label"><?php echo $l_email;?></label>
+              <input type="email" name="corusu" id="corusu"  class="form-control" placeholder="<?php echo $i_email;?>" autocomplete="off">
+            </div>
               
-            
-
-              <div class="mb-3">
-                <label class="form-label"><?php echo $l_email;?></label>
-                <input type="email" name="corusu" id="corusu"  class="form-control" placeholder="<?php echo $i_email;?>" autocomplete="off">
-              </div>
-              
-              <div class="mb-2">
+            <div class="mb-2">
                 
-                <label class="form-label">
+              <label class="form-label">
                 <?php echo $l_password;?> 
                   <span class="form-label-description">
                     <a href="./forgot-password.html">I forgot password</a>
                   </span>
-                </label>
+              </label>
                 
-                <div class="input-group input-group-flat">
-                  <input type="password" name="pasusu" class="form-control"  placeholder="<?php echo $i_password;?>"  autocomplete="off">
+              <div class="input-group input-group-flat">
+                <input type="password" name="pasusu" class="form-control"  placeholder="<?php echo $i_password;?>"  autocomplete="off">
                   <span class="input-group-text">
                     <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
                       <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
                     </a>
                   </span>
-                </div>
-
-              </div>
-              
-              <div class="mb-2">
-                <label class="form-check">
-                  <input type="checkbox" class="form-check-input"/>
-                  <span class="form-check-label">Remember me on this device</span>
-                </label>
               </div>
 
+            </div>
               
-              
-              <div class="form-footer">
-                <input type="hidden" name="enviar" class="form-control" value="<?php echo $i_enviar;?>" >
-                <button type="submit" class="btn btn-primary w-100"><?php echo $b_login;?></button>
-              </div>
+            <div class="mb-2">
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input"/>
+                <span class="form-check-label">Remember me on this device</span>
+              </label>
+            </div>
+
+            <div class="form-footer">
+              <input type="hidden" name="enviar" class="form-control" value="<?php echo $i_enviar;?>" >
+              <button type="submit" class="btn btn-primary w-100"><?php echo $b_login;?></button>
+            </div>
             
-            </form>
+          </form>
             
-          </div>
-          <div class="hr-text">or</div>
+        </div>
+        <div class="hr-text">or</div>
           <div class="card-body">
             <div class="row">
-              <div class="col"><a href="#" class="btn w-100">
-                  <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon text-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+              <div class="col">
+                <a href="#" class="btn w-100">
+                  <img src="img/brand-github.svg" width="24" height="24" alt="Tabler" class="icon text-github">
                   Login with Github
-                </a></div>
-              <div class="col"><a href="#" class="btn w-100">
-                  <!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon text-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z" /></svg>
+                </a>
+              </div>
+              <div class="col">
+                <a href="#" class="btn w-100">
+                  <img src="img/brand-twitter.svg" width="24" height="24" alt="Tabler" class="icon text-github">
                   Login with Twitter
-                </a></div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -109,7 +95,7 @@ echo $path . PHP_EOL;
     </div>
     <!-- Libs JS -->
     <!-- Tabler Core -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo Titulo::getBaseUrl();?>/modulo/admin/vista/login/login.js"></script>
+    <script src="../../../../plantillas/jquery/jquery-3.7.1.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

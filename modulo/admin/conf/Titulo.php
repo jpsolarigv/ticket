@@ -1,5 +1,7 @@
 <?php
 
+$GLOBALS['base_url'] = 'https://matervirtual.edu.pe/materv/';
+
 class Titulo {
     
     // Array de títulos

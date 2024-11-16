@@ -1,14 +1,11 @@
 <?php
-require_once("/home/jpsolarig/public_html/materv/modulo/admin/conf/ConectarDB.php");
-require_once("/home/jpsolarig/public_html/materv/modulo/admin/modelo/Login_m.php"); 
+
+  require_once("../conf/ConectarDB.php");
+  require_once("../modelo/Login_m.php");
 
   header('Content-Type: application/json');
 
-  //$corusu=($_POST["corusu"]);
-  //$($_POST["corusu"])
-  //$password = trim($_POST["password"]);
-
-
+  
   // Array para almacenar errores
   $errores = [];
 
@@ -46,12 +43,12 @@ require_once("/home/jpsolarig/public_html/materv/modulo/admin/modelo/Login_m.php
       {
         ini_set('session.gc_maxlifetime', 86400);  // Duración de la sesión en segundos (24 horas)
         ini_set('session.cookie_lifetime', 86400); // Duración del cookie de sesión en segundos (24 horas)
-          session_start();   
+        session_start();   
           
-          //$_SESSION["ideusu"]=$resultado["ideusu"];
-          //$_SESSION["nomusu"]=$resultado["nomusu"];
-          //$_SESSION["apeusu"]=$resultado["apeusu"];
-          //$_SESSION["iderol"]=$resultado["iderol"];
+          $_SESSION["ide_usu"]=$resultado["ideusu"];
+          $_SESSION["nom_usu"]=$resultado["nomusu"];
+          $_SESSION["ape_usu"]=$resultado["apeusu"];
+          $_SESSION["nom_rol"]=$resultado["nomrol"];
                
           //$errores[] = $_SESSION["ideusu"];
           //$errores[] = $_SESSION["nomusu"];
@@ -67,7 +64,7 @@ require_once("/home/jpsolarig/public_html/materv/modulo/admin/modelo/Login_m.php
       } 
       else
       {
-        $errores[] = "NO OK";
+        $errores[] = "Correo y/o contraseña no es válida, verifique sus credenciales.";
         //$misession -> setFlashdata('mensaje_flash', 'Correo y/o contraseña no es válida, verifique sus credenciales.');
 				//$this->index();
       }
