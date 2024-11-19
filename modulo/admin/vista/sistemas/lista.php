@@ -1,18 +1,24 @@
+<!-- ### PAGE-BODY ### -->
 <div class="page-body">
-   <!-- Botones fuera de la tabla -->
-   <button id="exportPdfBtn" class="btn-export">Exportar a PDF</button>
-    <button id="exportExcelBtn" class="btn-export">Exportar a Excel</button>
-    <button id="exportCsvBtn" class="btn-export">Exportar a CSV</button>
-    <button id="printBtn" class="btn-export">Imprimir</button>
+
+    <!-- Botones fuera de la tabla -->
+  
+    
+    
+    
     <button id="columnVisibilityBtn" class="btn-export">Visibilidad de Columnas</button>
 
+
+
+    <div class="container-xl d-flex flex-column justify-content-center">
+           
+        
 
     <div class="col-12">
     <div class="card">
         <div class="table-responsive">
          
-
-    
+   
     <table id="example" class="display table-vcenter" style="width:80%">
         <thead>
             <tr>
@@ -48,6 +54,7 @@
     </div>
   </div>
 
+  </div>
     <script>
         $(document).ready(function () {
             // Inicializar la tabla DataTables
