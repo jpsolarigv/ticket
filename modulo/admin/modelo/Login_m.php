@@ -10,17 +10,6 @@
       FROM usuarios AS usu
       INNER join roles AS rol on rol.iderol = usu.iderol
       WHERE corusu=? and pasusu=? and estusu=1";
-
-    /*
-    $sql="SELECT t_familia_pulsera.pul_ide,t_familia.fam_nom,t_pulsera.pul_num,t_pulsera.pul_est  
-    FROM t_familia_pulsera
-    INNER join t_familia on t_familia.fam_ide = t_familia_pulsera.fam_ide
-    INNER join t_pulsera on t_pulsera.pul_ide = t_familia_pulsera.pul_ide
-    WHERE t_pulsera.pul_est = 0
-    ";
-      */
-
-      
       $stmt=$conectar->prepare($sql);
       $stmt->bindValue(1, $correo);
       $stmt->bindValue(2, $pass);
@@ -32,6 +21,7 @@
     public function redireccionar()  
     {
       $redirect = parent::ruta().'modulo/admin/vista/panel/index.php';
+      //$redirect = parent::ruta().'modulo/admin/controlador/homeController.php';
       return $redirect;
     }
 

@@ -6,6 +6,7 @@
   header('Content-Type: application/json');
 
   
+  
   // Array para almacenar errores
   $errores = [];
 
@@ -49,18 +50,6 @@
           $_SESSION["nom_usu"]=$resultado["nomusu"];
           $_SESSION["ape_usu"]=$resultado["apeusu"];
           $_SESSION["nom_rol"]=$resultado["nomrol"];
-               
-          //$errores[] = $_SESSION["ideusu"];
-          //$errores[] = $_SESSION["nomusu"];
-          //$errores[] = $_SESSION["apeusu"];
-          //$errores[] = $_SESSION["iderol"];
-
-          //exit(json_encode(array('result' => TRUE)));
-
-          //echo json_encode(['redirect' => 'index.php']);
-          //exit();
-        //$misession->set($datosSesion);
-        //return redirect()->to(site_url('escritorio'));	
       } 
       else
       {

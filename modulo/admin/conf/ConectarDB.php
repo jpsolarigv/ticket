@@ -2,6 +2,8 @@
 
 class ConectarDB
 {
+  protected $t1;
+  
   private $ser = "localhost";
   private $dbn = "jpsolarig_administrador";
   private $use = "jpsolarig_administrador";

@@ -8,12 +8,12 @@
             <a href=".">
               <img src="../brands/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
-          </h1>
-          
+          </h1> 
+             
           <div class="navbar-nav flex-row order-md-last">
             
-            
-            
+             
+             
             <div class="nav-item dropdown">
               <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                 <span class="avatar avatar-sm" style="background-image: url(../avatars/000m.jpg)"></span>
