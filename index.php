@@ -2,6 +2,6 @@
   ini_set('display_errors', 1);
   error_reporting(E_ALL);
   
-  header("Location: modulo/admin/vista/login");
+  header("Location: modulo/admin/vistas/login");
 ?>
 
